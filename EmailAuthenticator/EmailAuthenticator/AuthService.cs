@@ -33,4 +33,9 @@ public class AuthService(IDbConnection conn) {
         var GetUsers = "select p.email, p.displayName from \"HowlDev.User\" p order by 1 asc";
         return conn.Query<User>(GetUsers);
     }
+
+    public IEnumerable<string> GetValidApiKeys(string email) {
+        List<string> keys = new List<string>();
+        return keys;
+    }
 }

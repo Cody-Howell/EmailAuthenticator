@@ -18,7 +18,7 @@ public class IdentityMiddleware(RequestDelegate next, AuthService service, IVali
                 return;
             }
 
-            List<User> users = service.GetAllUsers().ToList();
+            List<User> users = service.GetValidApiKeys().ToList();
             if (users.Any(u => u.Email == user)) {
                 await next(context);
             } else {

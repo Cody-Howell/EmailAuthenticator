@@ -18,7 +18,7 @@ builder.Services.AddSingleton<IValidPaths, ValidPaths>();
 var app = builder.Build();
 
 //app.UseHttpsRedirection();
-//app.UseMiddleware<IdentityMiddleware>();
+app.UseMiddleware<IdentityMiddleware>();
 app.UseRouting();
 
 app.MapGet("/api/users", (AuthService service) => service.GetAllUsers());
