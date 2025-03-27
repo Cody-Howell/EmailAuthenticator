@@ -1,6 +1,8 @@
-@EmailAuthenticator.API_HostAddress = http://localhost:5092
+@emailAuth = http://localhost:5092
 
-GET {{EmailAuthenticator.API_HostAddress}}/weatherforecast/
+###
+GET {{emailAuth}}/api/users
 Accept: application/json
-
+###
+POST {{emailAuth}}/api/signin?email=audrey@inglish.com
 ###

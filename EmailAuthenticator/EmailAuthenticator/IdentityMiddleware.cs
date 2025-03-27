@@ -3,10 +3,10 @@
 using Microsoft.AspNetCore.Http;
 using System.Net.Http;
 
-public class IdentityMiddleware(RequestDelegate next, AuthService service) {
+public class IdentityMiddleware(RequestDelegate next, AuthService service, IValidPaths path) {
+    private readonly List<string> paths = path.Paths;
     public async Task InvokeAsync(HttpContext context) {
-        if (context.Request.Path == "/api/health" ||
-            context.Request.Path == "/api/signin") {
+        if (paths.Contains(context.Request.Path)) {
             await next(context);
         } else {
             // Validate user here
@@ -19,7 +19,7 @@ public class IdentityMiddleware(RequestDelegate next, AuthService service) {
             }
 
             List<User> users = service.GetAllUsers().ToList();
-            if (users.Any(u => u.Username == user && u.ApiKey == key)) {
+            if (users.Any(u => u.Email == user)) {
                 await next(context);
             } else {
                 context.Response.StatusCode = 401;

@@ -13,36 +13,36 @@ builder.Services.AddSingleton<IDbConnection>(provider =>
     return new NpgsqlConnection(connString);
 });
 builder.Services.AddSingleton<AuthService>();
+builder.Services.AddSingleton<IValidPaths, ValidPaths>();
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
-app.UseMiddleware<IdentityMiddleware>();
+//app.UseHttpsRedirection();
+//app.UseMiddleware<IdentityMiddleware>();
 app.UseRouting();
 
 app.MapGet("/api/users", (AuthService service) => service.GetAllUsers());
-app.MapPost("/api/signin", (AuthService service, User user) =>
+//app.MapPost("/api/signin", (AuthService service, User user) =>
+//{
+//    List<User> users = service.GetAllUsers().ToList();
+//    if (users.Any(u => u.Email == user.Email)) {
+//        string key = StringHelper.GenerateRandomString(20);
+//        service.UpdateApiKey(user.Email, key);
+//        return key;
+//    } else {
+//        return "";
+//    }
+//});
+
+app.MapPost("/api/signin", (AuthService service, string email) =>
 {
-    List<User> users = service.GetAllUsers().ToList();
-    if (users.Any(u => u.Username == user.Username)) {
-        string key = StringHelper.GenerateRandomString(20);
-        service.UpdateApiKey(user.Username, key);
-        return key;
-    } else {
-        return "";
-    }
+    return service.AddUser(email);
 });
 
-app.MapPost("/api/signin/add", (AuthService service, string email) =>
-{
-    service.AddUser(new User { Email = email });
-    return "Success";
-});
-
-app.MapGet("/api/signin/delete/{user}", (AuthService service, string email) =>
-{
-    service.DeleteUser(email);
-});
+//app.MapGet("/api/signin/delete/{user}", (AuthService service, string email) =>
+//{
+//    service.DeleteUser(email);
+//});
 
 app.Run();
 

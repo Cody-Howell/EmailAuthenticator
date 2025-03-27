@@ -7,7 +7,6 @@
 .env
 
 .vs/
-obj/
 
 # User-specific files
 *.rsuser
