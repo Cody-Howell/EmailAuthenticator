@@ -1,0 +1,112 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DAB3EA55-0554-48D1-B979-2E49F0F3A860}|EmailAuthenticator\\EmailAuthenticator.csproj|c:\\users\\cody\\mycodedir\\libraries\\emailauthenticator\\emailauthenticator\\emailauthenticator\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAB3EA55-0554-48D1-B979-2E49F0F3A860}|EmailAuthenticator\\EmailAuthenticator.csproj|solutionrelative:emailauthenticator\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4490C21A-AF36-48A7-A132-D9E509D35377}|EmailAuthenticator.API\\EmailAuthenticator.API.csproj|c:\\users\\cody\\mycodedir\\libraries\\emailauthenticator\\emailauthenticator\\emailauthenticator.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4490C21A-AF36-48A7-A132-D9E509D35377}|EmailAuthenticator.API\\EmailAuthenticator.API.csproj|solutionrelative:emailauthenticator.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAB3EA55-0554-48D1-B979-2E49F0F3A860}|EmailAuthenticator\\EmailAuthenticator.csproj|c:\\users\\cody\\mycodedir\\libraries\\emailauthenticator\\emailauthenticator\\emailauthenticator\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAB3EA55-0554-48D1-B979-2E49F0F3A860}|EmailAuthenticator\\EmailAuthenticator.csproj|solutionrelative:emailauthenticator\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAB3EA55-0554-48D1-B979-2E49F0F3A860}|EmailAuthenticator\\EmailAuthenticator.csproj|c:\\users\\cody\\mycodedir\\libraries\\emailauthenticator\\emailauthenticator\\emailauthenticator\\identitymiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAB3EA55-0554-48D1-B979-2E49F0F3A860}|EmailAuthenticator\\EmailAuthenticator.csproj|solutionrelative:emailauthenticator\\identitymiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\User.cs",
+              "RelativeDocumentMoniker": "EmailAuthenticator\\User.cs",
+              "ToolTip": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\User.cs",
+              "RelativeToolTip": "EmailAuthenticator\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T03:35:20.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\AuthService.cs",
+              "RelativeDocumentMoniker": "EmailAuthenticator\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\AuthService.cs",
+              "RelativeToolTip": "EmailAuthenticator\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T03:29:47.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator.API\\Program.cs",
+              "RelativeDocumentMoniker": "EmailAuthenticator.API\\Program.cs",
+              "ToolTip": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator.API\\Program.cs",
+              "RelativeToolTip": "EmailAuthenticator.API\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T03:25:24.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IdentityMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\IdentityMiddleware.cs",
+              "RelativeDocumentMoniker": "EmailAuthenticator\\IdentityMiddleware.cs",
+              "ToolTip": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\IdentityMiddleware.cs",
+              "RelativeToolTip": "EmailAuthenticator\\IdentityMiddleware.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T03:23:21.353Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailAuthenticator", "EmailAuthenticator\EmailAuthenticator.csproj", "{DAB3EA55-0554-48D1-B979-2E49F0F3A860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailAuthenticator.API", "EmailAuthenticator.API\EmailAuthenticator.API.csproj", "{4490C21A-AF36-48A7-A132-D9E509D35377}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAB3EA55-0554-48D1-B979-2E49F0F3A860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB3EA55-0554-48D1-B979-2E49F0F3A860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAB3EA55-0554-48D1-B979-2E49F0F3A860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB3EA55-0554-48D1-B979-2E49F0F3A860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4490C21A-AF36-48A7-A132-D9E509D35377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4490C21A-AF36-48A7-A132-D9E509D35377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4490C21A-AF36-48A7-A132-D9E509D35377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4490C21A-AF36-48A7-A132-D9E509D35377}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {992F08FE-D7A6-43DE-9B2C-A1EAA7DE2056}
+	EndGlobalSection
+EndGlobal
