@@ -1,6 +1,6 @@
 @emailAuth = http://localhost:5092
 @email = codyhowell44@gmail.com
-@key = RGMn4P!MNRw27ANEbPmg
+@key = vAY!htGV0pTKrXmpKD5P
 
 ###
 POST {{emailAuth}}/api/signin?email=codyhowell44@gmail.com

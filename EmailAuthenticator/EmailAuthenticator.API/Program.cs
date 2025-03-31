@@ -58,7 +58,9 @@ app.Run();
 internal class IDMiddlewareConfig : IIDMiddlewareConfig {
     public List<string> Paths => new List<string>() { "/health", "/api/signin", "/api/signin/validate", "/signedin" };
 
-    public TimeSpan ExpirationDate => new TimeSpan(90, 0, 0, 0);
+    public TimeSpan ExpirationDate => new TimeSpan(90, 0, 0, 0); // 3 Months
+    //public TimeSpan ExpirationDate => new TimeSpan(0, 1, 0); // 1 minute
+
 }
 
 internal class EmailService : IEmailService {
