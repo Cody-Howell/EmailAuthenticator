@@ -28,14 +28,18 @@ public class AuthService(IDbConnection conn, IEmailService service) {
     /// </summary>
     /// <returns>API key the user should use for login</returns>
     public async Task<string> NewSignIn(string email) {
-        string newApiKey = StringHelper.GenerateRandomString(20);
-        string validationToken = StringHelper.GenerateRandomString(40);
-        await service.SendValidationEmail(email, validationToken);
+        if (CurrentUnauthorizedKeys(email) < 2) {
+            string newApiKey = StringHelper.GenerateRandomString(20);
+            string validationToken = StringHelper.GenerateRandomString(40);
+            await service.SendValidationEmail(email, validationToken);
 
-        var addValidation = "insert into \"HowlDev.Key\" (email, apiKey, validatorToken) values (@email, @newApiKey, @validationToken)";
-        conn.Execute(addValidation, new { email, newApiKey, validationToken });
+            var addValidation = "insert into \"HowlDev.Key\" (email, apiKey, validatorToken) values (@email, @newApiKey, @validationToken)";
+            conn.Execute(addValidation, new { email, newApiKey, validationToken });
 
-        return newApiKey;
+            return newApiKey;
+        } else {
+            return "Too many unauthorized keys";
+        }
     }
 
     /// <summary>
@@ -91,5 +95,10 @@ public class AuthService(IDbConnection conn, IEmailService service) {
     public void GlobalSignOut(string email) {
         var removeKeys = "delete from \"HowlDev.Key\" where email = @email";
         conn.Execute(removeKeys, new { email });
+    }
+
+    private int CurrentUnauthorizedKeys(string email) {
+        var countKeys = "select count(*) from \"HowlDev.Key\" where email = @email and validatedon is null";
+        return conn.QuerySingle<int>(countKeys, new { email });
     }
 }

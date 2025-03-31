@@ -1,15 +1,15 @@
 @emailAuth = http://localhost:5092
 @email = codyhowell44@gmail.com
-@key = 76WN6Th802RrckkoLdm_
+@key = RGMn4P!MNRw27ANEbPmg
 
-###
-GET {{emailAuth}}/api/users
-Email-Auth_Email: {{email}}
-Email-Auth_ApiKey: {{key}}
 ###
 POST {{emailAuth}}/api/signin?email=codyhowell44@gmail.com
 ###
 GET {{emailAuth}}/health
+###
+GET {{emailAuth}}/api/users
+Email-Auth_Email: {{email}}
+Email-Auth_ApiKey: {{key}}
 ###
 GET {{emailAuth}}/api/signout/codyhowell44@gmail.com
 Email-Auth_Email: {{email}}
