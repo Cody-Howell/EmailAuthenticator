@@ -1,8 +1,6 @@
 using EmailAuthenticator;
 using Npgsql;
 using System.Data;
-using System.Security.Cryptography;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +11,8 @@ builder.Services.AddSingleton<IDbConnection>(provider =>
     return new NpgsqlConnection(connString);
 });
 builder.Services.AddSingleton<AuthService>();
-builder.Services.AddSingleton<IValidPaths, ValidPaths>();
+builder.Services.AddSingleton<IIDMiddlewareConfig, IDMiddlewareConfig>();
+builder.Services.AddSingleton<IEmailService, EmailService>();
 
 var app = builder.Build();
 
@@ -22,28 +21,48 @@ app.UseMiddleware<IdentityMiddleware>();
 app.UseRouting();
 
 app.MapGet("/api/users", (AuthService service) => service.GetAllUsers());
-//app.MapPost("/api/signin", (AuthService service, User user) =>
-//{
-//    List<User> users = service.GetAllUsers().ToList();
-//    if (users.Any(u => u.Email == user.Email)) {
-//        string key = StringHelper.GenerateRandomString(20);
-//        service.UpdateApiKey(user.Email, key);
-//        return key;
-//    } else {
-//        return "";
-//    }
-//});
 
 app.MapPost("/api/signin", (AuthService service, string email) =>
 {
     return service.AddUser(email);
 });
 
-//app.MapGet("/api/signin/delete/{user}", (AuthService service, string email) =>
-//{
-//    service.DeleteUser(email);
-//});
+app.MapGet("/api/signin/validate", (AuthService service, string email, string token) =>
+{
+    service.Validate(email, token);
+    return Results.Redirect("/signedin");
+});
+
+app.MapGet("/api/user/{email}", (AuthService service, string email) =>
+{
+    return service.GetUser(email);
+});
+
+app.MapGet("/signedin", () => "Thanks for signing in!");
+
+app.MapGet("/health", () => "Health check");
+
+app.MapGet("/api/signin/delete/{email}", (AuthService service, string email) =>
+{
+    service.DeleteUser(email);
+});
+
+app.MapGet("/api/signout/{email}", (AuthService service, string email) =>
+{
+    service.GlobalSignOut(email);
+});
 
 app.Run();
 
 
+internal class IDMiddlewareConfig : IIDMiddlewareConfig {
+    public List<string> Paths => new List<string>() { "/health", "/api/signin", "/api/signin/validate", "/signedin" };
+
+    public TimeSpan ExpirationDate => new TimeSpan(90, 0, 0, 0);
+}
+
+internal class EmailService : IEmailService {
+    public async Task SendValidationEmail(string email, string validationToken) {
+        Console.WriteLine($"http://localhost:5092/api/signin/validate?email={email}&token={validationToken}");
+    }
+}

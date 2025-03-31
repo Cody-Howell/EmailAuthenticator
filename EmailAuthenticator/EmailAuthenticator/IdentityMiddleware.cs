@@ -3,27 +3,36 @@
 using Microsoft.AspNetCore.Http;
 using System.Net.Http;
 
-public class IdentityMiddleware(RequestDelegate next, AuthService service, IValidPaths path) {
-    private readonly List<string> paths = path.Paths;
+public class IdentityMiddleware(RequestDelegate next, AuthService service, IIDMiddlewareConfig config) {
     public async Task InvokeAsync(HttpContext context) {
-        if (paths.Contains(context.Request.Path)) {
+        if (config.Paths.Contains(context.Request.Path)) {
             await next(context);
         } else {
             // Validate user here
-            string? user = context.Request.Headers["User"];
-            string? key = context.Request.Headers["ApiKey"];
-            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(key)) {
+            string? email = context.Request.Headers["Email-Auth_Email"];
+            string? key = context.Request.Headers["Email-Auth_ApiKey"];
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(key)) {
                 context.Response.StatusCode = 401;
-                await context.Response.WriteAsync("Unauthorized: Missing header(s)");
+                await context.Response.WriteAsync("Unauthorized: Missing header(s). Requires an \"Email-Auth_Email\" and \"Email-Auth_ApiKey\" header.");
                 return;
             }
 
-            List<User> users = service.GetValidApiKeys().ToList();
-            if (users.Any(u => u.Email == user)) {
+            DateTime? output = new DateTime();
+            try {
+                output = service.IsValidApiKey(email, key);
+            } catch {
+                context.Response.StatusCode = 401;
+                await context.Response.WriteAsync("Invalid API key");
+                return;
+            } 
+
+
+            TimeSpan? timeBetween = DateTime.Now.ToUniversalTime() - output;
+            if (timeBetween < config.ExpirationDate) {
                 await next(context);
             } else {
                 context.Response.StatusCode = 401;
-                await context.Response.WriteAsync("Unauthorized");
+                await context.Response.WriteAsync("Time has run out. Please sign in again.");
             }
         }
     }

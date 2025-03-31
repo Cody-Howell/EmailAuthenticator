@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 namespace EmailAuthenticator;
 
 public static class StringHelper {
-    private const string Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+";
+    private const string Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!_"; // Had to remove many special characters
 
     public static string CustomHash(string s) {
         return Convert.ToBase64String(SHA256.HashData(Encoding.UTF8.GetBytes(s)));
