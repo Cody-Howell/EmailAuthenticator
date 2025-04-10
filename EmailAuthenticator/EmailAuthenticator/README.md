@@ -15,7 +15,17 @@ var app = builder.Build();
 app.UseMiddleware<IdentityMiddleware>();
 ```
 
+Important headers: 
+```
+Email-Auth_Email: {{email}}
+Email-Auth_ApiKey: {{key}}
+```
+
 ## Changelog
+
+0.8.6 (4/10/25)
+
+- Forgot to add nullability check. ExpirationDate now works correctly.
 
 0.8.5 (4/10/25)
 
