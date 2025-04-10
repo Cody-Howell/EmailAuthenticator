@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("An email-only auth package with a service and middleware for an API.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.8.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.8+72a0d09fd0e93fa54026a25e5da029928ba975e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.8+0d4110fe9732d1405845b68ad98710e4b537018f")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmailAuthenticator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmailAuthenticator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.8.0.0")]

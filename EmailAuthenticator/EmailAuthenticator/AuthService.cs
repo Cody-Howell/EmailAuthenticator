@@ -5,6 +5,9 @@ using System.Data;
 
 namespace EmailAuthenticator;
 
+/// <summary>
+/// Service implementation to handle the database. Runs through Dapper.
+/// </summary>
 public class AuthService(IDbConnection conn, IEmailService service) {
     /// <summary>
     /// Adds a new user if one doesn't already exists and returns the API key the user should use. 
