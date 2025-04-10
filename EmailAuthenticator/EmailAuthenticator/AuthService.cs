@@ -64,10 +64,10 @@ public class AuthService(IDbConnection conn, IEmailService service) {
     /// </summary>
     /// <param name="email">Email address used</param>
     /// <param name="key">API Key</param>
-    /// <returns>Null or DateTime was validated</returns>
+    /// <returns>Null or DateTime</returns>
     public DateTime? IsValidApiKey(string email, string key) {
         var validKey = "select k.validatedon from \"HowlDev.Key\" k where email = @email and apiKey = @key";
-        return conn.QuerySingle<DateTime>(validKey, new { email, key });
+        return conn.QuerySingle<DateTime?>(validKey, new { email, key });
     }
 
     /// <summary>
@@ -77,6 +77,16 @@ public class AuthService(IDbConnection conn, IEmailService service) {
         string time = DateTime.Now.ToUniversalTime().ToString("u");
         var validate = $"update \"HowlDev.Key\" hdk set validatedon = '{time}' where email = @email and validatortoken = @token";
         conn.Execute(validate, new { email, token });
+    }
+
+    /// <summary>
+    /// Updates the api key with the current DateTime value. This allows recently signed-in users to 
+    /// continue being signed in on their key. 
+    /// </summary>
+    public void ReValidate(string email, string key) {
+        string time = DateTime.Now.ToUniversalTime().ToString("u");
+        var validate = $"update \"HowlDev.Key\" hdk set validatedon = '{time}' where email = @email and apiKey = @key";
+        conn.Execute(validate, new { email, key });
     }
 
     /// <summary>
@@ -95,6 +105,14 @@ public class AuthService(IDbConnection conn, IEmailService service) {
     public void GlobalSignOut(string email) {
         var removeKeys = "delete from \"HowlDev.Key\" where email = @email";
         conn.Execute(removeKeys, new { email });
+    }
+
+    /// <summary>
+    /// Sign out on an individual device by passing the key you want signed out. 
+    /// </summary>
+    public void KeySignOut(string email, string key) {
+        var removeKey = "delete from \"HowlDev.Key\" where email = @email and apiKey = @key";
+        conn.Execute(removeKey, new { email, key });
     }
 
     private int CurrentUnauthorizedKeys(string email) {

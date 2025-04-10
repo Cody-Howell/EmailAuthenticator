@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator.csproj": {
-      "version": "1.0.0",
+      "version": "0.8.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator.csproj",
         "projectName": "EmailAuthenticator",
