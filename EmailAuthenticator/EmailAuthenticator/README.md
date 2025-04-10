@@ -3,7 +3,17 @@
 This authenticator provides a few interfaces, an AuthService, and an IdentityMiddleware. You need to 
 implement an EmailService that actually sends the email. 
 
-More to come. 
+Recommended API layout in `Program.cs`: 
+
+```
+builder.Services.AddSingleton<AuthService>();
+builder.Services.AddSingleton<IIDMiddlewareConfig, IDMiddlewareConfig>();
+builder.Services.AddSingleton<IEmailService, EmailService>();
+
+var app = builder.Build();
+
+app.UseMiddleware<IdentityMiddleware>();
+```
 
 ## Changelog
 

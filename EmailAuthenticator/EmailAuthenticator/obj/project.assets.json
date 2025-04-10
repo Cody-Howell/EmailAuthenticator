@@ -211,7 +211,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "0.8.0",
+    "version": "0.8.5",
     "restore": {
       "projectUniqueName": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator.csproj",
       "projectName": "EmailAuthenticator",

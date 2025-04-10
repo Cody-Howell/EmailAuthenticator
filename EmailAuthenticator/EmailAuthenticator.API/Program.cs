@@ -15,7 +15,6 @@ builder.Services.AddSingleton<IEmailService, EmailService>();
 
 var app = builder.Build();
 
-//app.UseHttpsRedirection();
 app.UseMiddleware<IdentityMiddleware>();
 app.UseRouting();
 

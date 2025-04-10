@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
-		<Version>0.8</Version>
+		<Version>0.8.5</Version>
 		<Authors>Howl Dev</Authors>
 		<Description>An email-only auth package with a service and middleware for an API.</Description>
 		<PackageTags>auth</PackageTags>
