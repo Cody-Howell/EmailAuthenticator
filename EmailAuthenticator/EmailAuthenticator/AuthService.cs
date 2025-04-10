@@ -1,6 +1,5 @@
 ﻿
 using Dapper;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
 
 namespace EmailAuthenticator;

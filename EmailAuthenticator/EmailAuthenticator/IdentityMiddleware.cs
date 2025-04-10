@@ -1,7 +1,6 @@
 ﻿namespace EmailAuthenticator;
 
 using Microsoft.AspNetCore.Http;
-using System.Net.Http;
 
 /// <summary>
 /// Identity Middleware relies on the <c>IIDMiddlewareConfig</c> to be injected through DI, as well as the AuthService. 
@@ -45,6 +44,11 @@ public class IdentityMiddleware(RequestDelegate next, AuthService service, IIDMi
                 await context.Response.WriteAsync("API key does not exist.");
                 return;
             } 
+
+            if (config.ExpirationDate is null) {
+                await next(context);
+                return;
+            }
 
 
             TimeSpan? timeBetween = DateTime.Now.ToUniversalTime() - output;

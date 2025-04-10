@@ -57,6 +57,8 @@ internal class IDMiddlewareConfig : IIDMiddlewareConfig {
     public List<string> Paths => new List<string>() { "/health", "/api/signin", "/api/signin/validate", "/signedin" };
 
     public TimeSpan? ExpirationDate => new TimeSpan(90, 0, 0, 0); // 3 Months
+    //public TimeSpan? ExpirationDate => null; // infinite
+
 
     public TimeSpan? ReValidationDate => new TimeSpan(10, 0, 0, 0); // 10 days 
 
