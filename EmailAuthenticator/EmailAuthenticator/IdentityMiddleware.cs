@@ -23,11 +23,11 @@ public class IdentityMiddleware(RequestDelegate next, AuthService service, IIDMi
             await next(context);
         } else {
             // Validate user here
-            string? email = context.Request.Headers["Email-Auth_Email"];
-            string? key = context.Request.Headers["Email-Auth_ApiKey"];
+            string? email = context.Request.Headers["Email-Auth-Email"];
+            string? key = context.Request.Headers["Email-Auth-ApiKey"];
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(key)) {
                 context.Response.StatusCode = 401;
-                await context.Response.WriteAsync("Unauthorized: Missing header(s). Requires an \"Email-Auth_Email\" and \"Email-Auth_ApiKey\" header.");
+                await context.Response.WriteAsync("Unauthorized: Missing header(s). Requires an \"Email-Auth-Email\" and \"Email-Auth-ApiKey\" header.");
                 return;
             }
 

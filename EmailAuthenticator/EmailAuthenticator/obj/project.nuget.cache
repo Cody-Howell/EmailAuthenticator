@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ss0UO/e/LOI=",
+  "dgSpecHash": "SrUdJCBUFBI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator.csproj",
+  "projectFilePath": "C:\\Users\\Cody\\myCodeDir\\_Projects\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cody\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
     "C:\\Users\\Cody\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.0\\microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",

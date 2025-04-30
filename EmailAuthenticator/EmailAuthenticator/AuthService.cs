@@ -82,8 +82,9 @@ public class AuthService(IDbConnection conn, IEmailService service) {
     }
 
     /// <summary>
-    /// Updates the api key with the current DateTime value. This allows recently signed-in users to 
-    /// continue being signed in on their key. 
+    /// Updates the api key with the current DateTime value. This allows recently 
+    /// signed-in users to continue being signed in on their key. It's primarily 
+    /// used by my IdentityMiddleware and not recommended you use it on its own.
     /// </summary>
     public void ReValidate(string email, string key) {
         string time = DateTime.Now.ToUniversalTime().ToString("u");
@@ -102,7 +103,8 @@ public class AuthService(IDbConnection conn, IEmailService service) {
     }
 
     /// <summary>
-    /// Signs a user out globally, such as in the instance of someone else gaining access to their account.
+    /// Signs a user out globally (all keys are deleted), such as in the instance 
+    /// of someone else gaining access to their account.
     /// </summary>
     public void GlobalSignOut(string email) {
         var removeKeys = "delete from \"HowlDev.Key\" where email = @email";

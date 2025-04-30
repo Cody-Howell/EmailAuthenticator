@@ -211,13 +211,13 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "0.8.6",
+    "version": "0.9.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator.csproj",
+      "projectUniqueName": "C:\\Users\\Cody\\myCodeDir\\_Projects\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator.csproj",
       "projectName": "EmailAuthenticator",
-      "projectPath": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator.csproj",
+      "projectPath": "C:\\Users\\Cody\\myCodeDir\\_Projects\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator.csproj",
       "packagesPath": "C:\\Users\\Cody\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cody\\myCodeDir\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\obj\\",
+      "outputPath": "C:\\Users\\Cody\\myCodeDir\\_Projects\\Libraries\\EmailAuthenticator\\EmailAuthenticator\\EmailAuthenticator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
